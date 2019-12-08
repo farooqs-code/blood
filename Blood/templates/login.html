@@ -1,0 +1,65 @@
+{% block content %}
+<center><h1 style="font-family: Magneto;font-style: italic">welcome to Admins page</h1></center>
+
+
+<br>
+<br>
+<br>
+<br>
+{% include 'buttons.html' %}
+
+
+<html>
+<head>
+	<title>Login Page</title>
+    {% include 'style.html' %}
+</head>
+<center>
+<body>
+<br><br><br>
+<br><br><br>
+
+{% endblock %}
+
+<form action="/login/" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Login Page</legend>
+        <table>
+            <tr>
+                <th>UserName : </th>
+                <th><input type="text" name="uname" placeholder="enter user name" required></th>
+            </tr>
+            <tr>
+                <th>Password : </th>
+                <th><input type="password" name="password" placeholder="Enter password" required></th>
+            </tr>
+            <tr>
+                <center><th><button type="submit" > Login </button></th></center>
+            </tr>
+        </table>
+
+    </fieldset>
+</form>
+
+</body>
+
+
+
+
+
+{% if user %}
+    <table>
+        <tr>
+            <th>{{ user }}</th>
+        </tr>
+    </table>
+{% endif %}
+{% if pass %}
+<table>
+    <tr><th>{{ pass }}</th></tr>
+</table>
+{% endif %}
+
+</center>
+</html>

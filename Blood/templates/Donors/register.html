@@ -1,0 +1,75 @@
+<center><h1 style="font-family: Magneto;font-style: italic">welcome to Donors page</h1></center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    {% include 'style.html' %}
+</head>
+
+    <center>
+        <br><br><br><br>
+        {% include 'buttons.html' %}
+        <br><br>
+            <body>
+
+                <form action="//" method="post">
+                        {% csrf_token %}
+                        <table border="1" align="center">
+                            <tr>
+                                <td>
+                                    Donor Name : <input type="text" placeholder="enter a name" required name="dname">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Password : <input type="text" placeholder="enter password" required name="pwd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Age : <input type="number" placeholder="enter age" required name="dage">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Gender : Male<input type="radio" required name="gender" value="Male">
+                                    Female <input type="radio" required name="gender" value="Female">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Account No : <input type="number" placeholder="Enter Account No" required name="AcNo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Account Type : <select name="type" required>
+                                    <option>--------</option>
+                                    <option>Current</option>
+                                    <option>Savings</option>
+                                </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Opening Balance : <input type="number" required placeholder="Enter Opening Amount" name="balance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <button type="submit"> Save </button>
+                                </th>
+                            </tr>
+
+                        </table>
+                    </form>
+
+
+            </body>
+    </center>
+</html>
